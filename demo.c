@@ -127,12 +127,12 @@ static void setup_cgroup(pid_t child_pid)
    sleep(2);
 
     if ((memory_fd = fopen("/sys/fs/cgroup/memory/demo_cg/memory.limit_in_bytes","w")) == NULL) {
-       fprintf(stderr,"error opening memory.limit_in_bytes %d \n");
+       fprintf(stderr,"error opening memory.limit_in_bytes\n");
        strerror(errno);
        exit(1);
     }
 
-    fprintf(memory_fd, "%d", 655360);
+    fprintf(memory_fd, "%d", 300000);
     fclose(memory_fd);
 
     if ((cgroup_procs_fd = fopen("/sys/fs/cgroup/memory/demo_cg/cgroup.procs", "w")) == NULL) {
