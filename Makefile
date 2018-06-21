@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall
+CFLAGS=
 LDFLAGS=-lseccomp
 EXEC=mem_limit demo
 
@@ -9,7 +9,7 @@ mem_limit:
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS)
 
 demo:
-	$(CC) $(CFLAGS) $@.c $(LDFLAGS) -Llibcgroup.so -o $@ $(LDFLAGS)
+	$(CC) $(CFLAGS) $@.c $(LDFLAGS) -o $@ $(LDFLAGS)
 
 .PHONY: clean mrproper
 
